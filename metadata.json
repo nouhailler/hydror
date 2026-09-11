@@ -1,0 +1,6 @@
+{
+  "name": "HydroSphere GIS",
+  "description": "Application SIG et d'analyse hydrologique avancée : cartographie de bassin versant, hypsométrie, occupation du sol Corine Land Cover et générateur de rapport PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

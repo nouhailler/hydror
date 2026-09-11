@@ -1,0 +1,141 @@
+import { BasinMetadata, EnvironmentalZone, LandCoverClass, StationData } from '../types';
+
+export const CLEARWATER_BASIN: BasinMetadata = {
+  id: 'basin-402',
+  name: 'Upper Clearwater Basin',
+  hucCode: 'HUC-8 #17060306',
+  areaKm2: 1428.6,
+  perimeterKm: 284.2,
+  graveliusKc: 0.68,
+  meanElevationM: 1240,
+  minElevationM: 482,
+  maxElevationM: 2648,
+  meanSlopeDeg: 18.4,
+  meanSlopePercent: 33.2,
+  hiIntegral: 0.46,
+  q90Discharge: 42.8,
+  q100Discharge: 540.0,
+  coordinates: "46°32'N, 115°48'W",
+  projection: 'EPSG:32611 (UTM Zone 11N)',
+  demResolution: 'DEM 10m (USGS 3DEP)',
+};
+
+export const GAUGING_STATIONS: StationData[] = [
+  {
+    id: 'sta-12340500',
+    name: 'Station #12340500 Clearwater Outlet',
+    type: 'limnigraph',
+    coordinates: [235, 345],
+    gaugeHeight: 3.42,
+    discharge: 42.8,
+    velocity: 1.8,
+    temperature: 9.4,
+    status: 'normal',
+    recentTrend: [38.2, 39.5, 41.0, 42.1, 42.8, 43.5, 42.8, 42.6, 42.8, 43.0, 42.7, 42.8],
+  },
+  {
+    id: 'snotel-540',
+    name: 'SNOTEL #540 Lolo Pass Ridge',
+    type: 'snotel',
+    coordinates: [200, 195],
+    gaugeHeight: 1.15,
+    discharge: 14.2,
+    velocity: 0.9,
+    temperature: 4.2,
+    swe: 480, // mm snow water equivalent
+    status: 'warning',
+    recentTrend: [11.0, 11.5, 12.0, 12.8, 13.5, 14.0, 14.2, 14.5, 14.2, 14.1, 14.2, 14.2],
+  },
+  {
+    id: 'sta-headwater',
+    name: 'Headwater Runoff #08 Lochsa Fork',
+    type: 'runoff',
+    coordinates: [145, 115],
+    gaugeHeight: 0.88,
+    discharge: 8.6,
+    velocity: 2.1,
+    temperature: 6.8,
+    status: 'normal',
+    recentTrend: [7.8, 8.0, 8.2, 8.5, 8.7, 8.6, 8.5, 8.6, 8.7, 8.6, 8.5, 8.6],
+  },
+];
+
+export const CORINE_LAND_COVER: LandCoverClass[] = [
+  {
+    id: 'clc-3',
+    name: 'Forêts & Milieux Semi-naturels',
+    code: 'CLC 3.1 / 3.2',
+    areaKm2: 742.9,
+    percentage: 52.0,
+    color: '#10b981',
+    runoffCoefficient: 0.18,
+    description: 'Forêts de conifères montagnardes, mélèzes, pessières et landes à bruyères. Fort pouvoir de rétention.',
+  },
+  {
+    id: 'clc-2',
+    name: 'Territoires Agricoles & Prairies',
+    code: 'CLC 2.1 / 2.3',
+    areaKm2: 471.4,
+    percentage: 33.0,
+    color: '#f59e0b',
+    runoffCoefficient: 0.38,
+    description: 'Pâturages d’altitude, cultures de vallée et prairies humides. Infiltration moyenne à rapide.',
+  },
+  {
+    id: 'clc-1',
+    name: 'Bâti, Zones Urbaines & Eau',
+    code: 'CLC 1.1 / 5.1',
+    areaKm2: 214.3,
+    percentage: 15.0,
+    color: '#38bdf8',
+    runoffCoefficient: 0.78,
+    description: 'Zones urbanisées, infrastructures routières, carrières et plans d’eau libres. Forte imperméabilisation.',
+  },
+];
+
+export const ENVIRONMENTAL_ZONES: EnvironmentalZone[] = [
+  {
+    id: 'natura-2000',
+    type: 'Natura 2000',
+    code: 'Site FR8201654',
+    name: 'Directive Habitats, Faune & Flore',
+    areaKm2: 285.4,
+    vulnerability: 'Vulnérabilité Modérée',
+    status: 'Actif',
+    color: '#10b981',
+  },
+  {
+    id: 'znieff-1',
+    type: 'ZNIEFF Type I',
+    code: '#830005412',
+    name: 'Gorges et Tourbières Subalpines',
+    areaKm2: 112.8,
+    vulnerability: 'Haute Valeur Biologique',
+    status: 'Inventorié',
+    color: '#ffb95f',
+  },
+  {
+    id: 'trame-bleue',
+    type: 'Trame Bleue & RAMSAR',
+    code: 'Corridor #42',
+    name: 'Continuité Écologique Fluviale & Ripisylves',
+    areaKm2: 198.9,
+    vulnerability: 'Protection Prioritaire',
+    status: 'Prioritaire',
+    color: '#0ea5e9',
+  },
+];
+
+export const HYPSOMETRIC_CURVE_POINTS = [
+  { aRel: 0.0, hRel: 1.0, altM: 2648 },
+  { aRel: 0.1, hRel: 0.88, altM: 2388 },
+  { aRel: 0.2, hRel: 0.76, altM: 2128 },
+  { aRel: 0.3, hRel: 0.65, altM: 1890 },
+  { aRel: 0.4, hRel: 0.55, altM: 1673 },
+  { aRel: 0.5, hRel: 0.46, altM: 1478 }, // Médian HI
+  { aRel: 0.6, hRel: 0.38, altM: 1305 },
+  { aRel: 0.7, hRel: 0.29, altM: 1110 },
+  { aRel: 0.8, hRel: 0.20, altM: 915 },
+  { aRel: 0.9, hRel: 0.10, altM: 698 },
+  { aRel: 1.0, hRel: 0.0, altM: 482 },
+];
